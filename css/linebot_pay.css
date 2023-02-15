@@ -8,9 +8,8 @@ body {
 }
 
 .black_bg {
-  background-color: rgba(21, 18, 18, 0.474);
   position: absolute;
-  overflow-y: hidden;
+  overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
   min-width: 100vh;
