@@ -1,0 +1,125 @@
+.Order_completed{
+    
+
+    background-color: #ffffff;
+    width:70%;
+   
+   
+    max-width: 1200px;
+    min-width: 1000px;
+   
+    position: relative;
+
+    // display: flex;
+    display: none;
+
+    .close_btn{
+        color: #00000037;
+        font-size: 2rem;
+        position: absolute ;
+        
+        top:5%;
+        left: 95%;
+        cursor: pointer;
+        
+        :hover{
+            color: #D52665;
+          }
+    }
+   
+    .blue_left_bg{
+        background-color: #09437F;
+        // width:30%;
+        // height: 100%;
+        // position: absolute;
+        // z-index: 9999;
+        top: 0;
+        left: 0;
+        padding:100px 60px 30px 60px;
+        
+        display: flex;;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        
+        .order_icon{
+            width: 60%;
+        }
+
+        h1{
+           text-align: center;
+            color: #ffffff;
+            margin-top: 30px;
+            line-height: 50px;
+        }    
+
+        .guess365_logo{
+            width: 60%;
+            margin-top: 150px;
+        }
+
+        
+    }
+
+
+    .order_details{
+       box-sizing: content-box;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+        padding: 150px 0px 150px 80px;
+        display: flex;
+        justify-content: space-between;
+        flex: 3;
+      
+        
+
+        .title_pay{
+            border-left: 5px  solid ;
+            border-color: #0D3B74;
+            height: 50px;
+            
+    
+            .title_pay_text{
+                margin-left: 30px;
+                font-size: 2rem;
+                font-weight: 600;
+                color: #0D3B74;
+               
+            }
+        }
+
+        .order_content_box{
+           margin : 30px 0; 
+            
+        }
+
+        .order_content{
+            
+            display: flex;
+            margin-left: 40px;
+            padding: 20px 0;
+            font-size: 1.5rem;
+
+
+            :nth-child(1){
+                color: #0D3B74;
+            }
+
+            :nth-child(2){
+                padding-left:50px;
+                color: #494A49;
+            }
+
+            .order_pink{
+                color: #D52665;
+            }
+        }
+       
+        
+    }
+
+
+
+}
+

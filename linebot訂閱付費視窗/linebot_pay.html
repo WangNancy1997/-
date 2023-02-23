@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LineBot訂閱支付</title>
-    <link rel="stylesheet" href="/css/linebot_pay.css">
+    <link rel="stylesheet" href="scss/css/linebot_pay.css">
+    <link rel="stylesheet" href="scss/css/Order_completed.css">
 
     <!-- 引用JQ -->
     <script 
@@ -25,7 +26,7 @@
             <!-- 黑色背景 -->
             <div class="black_bg" id="black_bg">
             <!-- 付款視窗 -->
-                <div class="pay_bg">
+                <div class="pay_bg" id="pay_bg">
                     <!-- 關閉按鈕 -->
                     <div class="close_btn">
                         <i class="fa-solid fa-xmark"></i>
@@ -120,7 +121,7 @@
                                             <span>儲值G幣</span>
                                         </button>
         
-                                        <button  type="button"  class="pay_submit">
+                                        <button  type="button"  class="pay_submit" id="pay_submit">
                                             <span>支付</span>
                                         </button>
                                         <!-- <a class="add_Gmony_submit">儲值G幣</a>
@@ -130,7 +131,55 @@
                                 </div>
                 </div>
         
-        
+                <!-- 付款成功明細 -->
+                <div class="Order_completed" id="Order_completed">
+
+                    <!-- 關閉按鈕 -->
+                    <div class="close_btn">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                        <!-- 藍色區塊＿左 -->
+                    <div class="blue_left_bg">
+                
+                        <img class="order_icon" src="/linebot訂閱付費視窗/img/order_icon.png" alt="">
+                        
+                        <h1 >
+                            付款成功<br>
+                            感謝您的訂閱
+                        </h1>
+
+                        <img class="guess365_logo" src="/linebot訂閱付費視窗/img/footer-logo.png" alt="">
+                    </div>
+
+                      <!-- 明細內容＿右-->
+                    <div class="order_details">
+                        <div class="title_pay">
+                            <p class="title_pay_text">訂閱明細</p>
+                        </div>
+
+                    <div class="order_content_box">
+                        <div class="order_content">
+                            <p>訂閱會員</p>
+                            <p>1111222258ssss</p>
+                        </div>
+
+                        <div class="order_content">
+                            <p>訂閱日期</p>
+                            <p id="order_date">1111222258ssss</p>
+                        </div>
+
+                        <div class="order_content">
+                            <p>訂閱期限</p>
+                            <p class="order_pink">2023/02/28~2023/03/02</p>
+                        </div>
+
+                        <div class="order_content">
+                            <p>訂閱項目</p>
+                            <p class="order_pink">LineBot NBA 賽事預測推播</p>
+                        </div>
+                     </div>
+                    </div>
+                </div>
         
             </div>
 
@@ -140,15 +189,34 @@
       
    
 
-      <!-- 開啟/關閉彈跳視窗按鈕_js -->
+     <!-- js -->
       <script >
+        // 送出-點下關閉付款視窗，顯示完成訂單視窗
+         $('.pay_submit').click(function(){
+             $('#Order_completed').css('display','flex');
+             $('#pay_bg').css('display','none');
+
+            //  填入當天日期
+             var Today=new Date();
+             $("#order_date").text((Today.getFullYear())+ "/" + (Today.getMonth()+1) + "/" + Today.getDate());
+        });
+
+
+      // 開啟/關閉彈跳視窗按鈕
         $('.close_btn').click(function(){
             $('#black_bg').css('display','none');
+            $('#order_content_box').css('display','none');
         });
 
         $('.open_popup').click(function(){
             $('#black_bg').css('display','flex');
+            $('#order_content_box').css('display','none');
         });
+
+
+    
+
+
       </script>
       
    
